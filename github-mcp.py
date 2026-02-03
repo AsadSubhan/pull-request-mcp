@@ -57,8 +57,8 @@ print("--------------------------------")
 # print(json.dumps(init_response, indent=4))
 
 #  Write to a file prettily
-with open("mcp_initialize.json", "w", encoding="utf-8") as f:
-    json.dump(init_response, f, indent=4)  
+# with open("mcp_initialize.json", "w", encoding="utf-8") as f:
+#     json.dump(init_response, f, indent=4)  
 
 print("mcp initialized.")
 
@@ -75,17 +75,17 @@ proc.stdin.write(json.dumps(initialized_notification) + "\n")
 proc.stdin.flush()
 
 
-# Send a request to MCP Server
+# Get tools list from MCP Server
 ### =========================================== 
 
-request = {
+toollist_request = {
     "jsonrpc": "2.0",
     "id": 2,
     "method": "tools/list",
     "params": {}
 }
 
-proc.stdin.write(json.dumps(request) + "\n")
+proc.stdin.write(json.dumps(toollist_request) + "\n")
 proc.stdin.flush()
 
 while True:
@@ -103,63 +103,243 @@ print("--------------------------------")
 # print(json.dumps(tool_list_response, indent=4))
 
 #  Write to a file prettily
-with open("mcp_tools_list.json", "w", encoding="utf-8") as f:
-    json.dump(tool_list_response, f, indent=4)  
+# with open("mcp_tools_list.json", "w", encoding="utf-8") as f:
+#     json.dump(tool_list_response, f, indent=4)  
 
 print("mcp tools list retrieved.")
 
 
-
-# Extract list of tools from MCP response
+# Get profile information using get_me tool
 ### ===========================================
 
-mcp_tools = tool_list_response["result"]["tools"]
-# print(mcp_tools[0])
-
-# Map each tool to openai function schema
-
-llm_tools = [
-    {
-        "type": "function",
-        "name": tool["name"],
-        "description": tool["description"],
-        "parameters": tool["inputSchema"]
+getprofile_request = {
+    "jsonrpc": "2.0",
+    "id": "getmeRequest",
+    "method": "tools/call",
+    "params": {
+        "name": "get_me",
+        "arguments": {}
     }
-    for tool in mcp_tools
-]
+}
+
+proc.stdin.write(json.dumps(getprofile_request) + "\n")
+proc.stdin.flush()
+
+while True:
+    getme_str = proc.stdout.readline()
+    getme_response = json.loads(getme_str)
+
+    if "id" not in getme_response:
+        continue
+
+    if getme_response["id"] == "getmeRequest":
+        break
+
+# print(json.dumps(getme_response, indent=2))
+
+# Get list of pull requests from a repository using list_pull_requests tool
+### ===========================================
+
+listpr_request = {
+    "jsonrpc": "2.0",
+    "id": "listprRequest",
+    "method": "tools/call",
+    "params": {
+        "name": "list_pull_requests",
+        "arguments": {
+            "owner": "asadsubhan0",
+            "repo": "AuthGHPages"
+        }
+    }
+}
+
+proc.stdin.write(json.dumps(listpr_request) + "\n")
+proc.stdin.flush()
+
+while True:
+    listpr_str = proc.stdout.readline()
+    listpr_response = json.loads(listpr_str)
+
+    if "id" not in listpr_response:
+        continue
+
+    if listpr_response["id"] == "listprRequest":
+        break
+
+# extract the text field
+pr_text = listpr_response["result"]["content"][0]["text"]
+
+# convert the string into a real Python list
+pr_list = json.loads(pr_text)
+# print(json.dumps(pr_list, indent=2))
+
+pr_number = pr_list[0]["number"]
+print(f"Latest PR number: {pr_number}")
 
 
-# System prompt: instructs the LLM about its role
-system_prompt = """
-You are a GitHub automation assistant.
-You can only use the MCP tools provided.
-Never make up arguments; always use the schema provided.
-Return your tool calls in structured JSON.
-"""
+# Get pull request details
+### ===========================================
 
-# Example user request
-user_prompt = "list me all the repositories which are created in last 2 months"
-
-
-# Ask LLM to suggest which tool to call with proper arguments
-llm_response = client.responses.create(
-    model="gpt-5.1",  
-    input=[
-        {"role": "system", "content": system_prompt},
-        {"role": "user", "content": user_prompt}
-    ],
-    tools=llm_tools,          
-    tool_choice="auto"        
-)
+getpr_request = {
+    "jsonrpc": "2.0",
+    "id": "getprRequest",
+    "method": "tools/call",
+    "params": {
+        "name": "pull_request_read",
+        "arguments": {
+            "method": "get",
+            "owner": "asadsubhan0",
+            "pullNumber": pr_number,
+            "repo": "AuthGHPages"
+        }
+    }
+}
 
 
-response_json = llm_response.model_dump()
+proc.stdin.write(json.dumps(getpr_request) + "\n")
+proc.stdin.flush()
 
-# print(json.dumps(response_json, indent=2))
-tool_call = response_json["tools"][0]
-print(json.dumps(tool_call, indent=2))
+while True:
+    getpr_str = proc.stdout.readline()
+    getpr_response = json.loads(getpr_str)
 
-# tool_name = tool_call["name"]
-# arguments_json = tool_call["arguments"]
+    if "id" not in getpr_response:
+        continue
 
-# print(f"LLM selected tool: {tool_name} with arguments: {arguments_json}")           
+    if getpr_response["id"] == "getprRequest":
+        break
+
+# extract the text field
+getpr_text = getpr_response["result"]["content"][0]["text"]
+
+# convert the string into a real Python list
+getpr_list = json.loads(getpr_text)
+# print(json.dumps(getpr_list, indent=2))
+
+head_sha = getpr_list["head"]["sha"]
+
+# Get diff of pull request
+### ==============================
+
+getdiff_request = {
+    "jsonrpc": "2.0",
+    "id": "getdiffRequest",
+    "method": "tools/call",
+    "params": {
+        "name": "pull_request_read",
+        "arguments": {
+            "method": "get_diff",
+            "owner": "asadsubhan0",
+            "pullNumber": pr_number,
+            "repo": "AuthGHPages"
+        }
+    }
+}
+
+proc.stdin.write(json.dumps(getdiff_request) + "\n")
+proc.stdin.flush()
+
+while True:
+    getdiff_str = proc.stdout.readline()
+    getdiff_response = json.loads(getdiff_str)
+
+    if "id" not in getdiff_response:
+        continue
+
+    if getdiff_response["id"] == "getdiffRequest":
+        break
+
+# extract the text field
+getdiff_text = getdiff_response["result"]["content"][0]["text"]
+# print(getdiff_text)
+
+
+# Get files of pull request
+### =============================
+
+getfiles_request = {
+    "jsonrpc": "2.0",
+    "id": "getfilesRequest",
+    "method": "tools/call",
+    "params": {
+        "name": "pull_request_read",
+        "arguments": {
+            "method": "get_files",
+            "owner": "asadsubhan0",
+            "pullNumber": pr_number,
+            "repo": "AuthGHPages"
+        }
+    }
+}
+
+proc.stdin.write(json.dumps(getfiles_request) + "\n")
+proc.stdin.flush()
+
+while True:
+    getfiles_str = proc.stdout.readline()
+    getfiles_response = json.loads(getfiles_str)
+
+    if "id" not in getfiles_response:
+        continue
+
+    if getfiles_response["id"] == "getfilesRequest":
+        break
+
+# extract the text field
+getfiles_text = getfiles_response["result"]["content"][0]["text"]
+
+# convert the string into a real Python list
+getfiles_list = json.loads(getfiles_text)
+# print(json.dumps(getfiles_list, indent=2))
+
+filename = getfiles_list[0]["filename"]
+status = getfiles_list[0]["status"]
+
+# Get file content of the changed files in pull request
+### =============================
+
+getfilecontent_request = {
+    "jsonrpc": "2.0",
+    "id": "getfilecontentRequest",
+    "method": "tools/call",
+    "params": {
+        "name": "get_file_contents",
+        "arguments": {
+            "owner": "asadsubhan0",
+            "repo": "AuthGHPages",
+            "path": filename,
+            "ref": head_sha
+        }
+    }
+}
+
+
+proc.stdin.write(json.dumps(getfilecontent_request) + "\n")
+proc.stdin.flush()
+
+while True:
+    getfilecontent_str = proc.stdout.readline()
+    getfilecontent_response = json.loads(getfilecontent_str)
+
+    if "id" not in getfilecontent_response:
+        continue
+
+    if getfilecontent_response["id"] == "getfilecontentRequest":
+        break
+
+# extract the text field
+getfilecontent_text = getfilecontent_response["result"]["content"][1]["resource"]["text"]
+
+print(getfilecontent_text)
+
+
+
+
+
+
+
+
+
+
+
+

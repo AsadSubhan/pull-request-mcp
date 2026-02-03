@@ -1,0 +1,988 @@
+1. get_me - Get my user profile
+=============================
+Input:
+    no parameters required
+
+Output:
+{
+  "login": "asadsubhan0",
+  "id": 223659256,
+  "profile_url": "https://github.com/asadsubhan0",
+  "avatar_url": "https://avatars.githubusercontent.com/u/223659256?v=4",
+  "details": {
+    "public_repos": 3,
+    "public_gists": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2025-07-30T10:53:49Z",
+    "updated_at": "2026-01-07T07:23:07Z"
+  }
+}
+
+2. list_pull_requests - List pull requests
+=============================
+Input:
+{
+  "owner": "asadsubhan0",
+  "repo": "AuthGHPages"
+}
+
+Output:
+[
+  {
+    "id": 3226831702,
+    "number": 1,
+    "state": "open",
+    "locked": false,
+    "title": "get endpoint added",
+    "created_at": "2026-01-30T08:09:05Z",
+    "updated_at": "2026-01-30T08:09:05Z",
+    "user": {
+      "login": "asadsubhan0",
+      "id": 223659256,
+      "node_id": "U_kgDODVTE-A",
+      "avatar_url": "https://avatars.githubusercontent.com/u/223659256?v=4",
+      "html_url": "https://github.com/asadsubhan0",
+      "gravatar_id": "",
+      "type": "User",
+      "site_admin": false,
+      "url": "https://api.github.com/users/asadsubhan0",
+      "events_url": "https://api.github.com/users/asadsubhan0/events{/privacy}",
+      "following_url": "https://api.github.com/users/asadsubhan0/following{/other_user}",
+      "followers_url": "https://api.github.com/users/asadsubhan0/followers",
+      "gists_url": "https://api.github.com/users/asadsubhan0/gists{/gist_id}",
+      "organizations_url": "https://api.github.com/users/asadsubhan0/orgs",
+      "received_events_url": "https://api.github.com/users/asadsubhan0/received_events",
+      "repos_url": "https://api.github.com/users/asadsubhan0/repos",
+      "starred_url": "https://api.github.com/users/asadsubhan0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/asadsubhan0/subscriptions"
+    },
+    "draft": false,
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/pull/1",
+    "issue_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/1",
+    "statuses_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/statuses/038e0738720161d188cc287831d7f31892840768",
+    "diff_url": "https://github.com/asadsubhan0/AuthGHPages/pull/1.diff",
+    "patch_url": "https://github.com/asadsubhan0/AuthGHPages/pull/1.patch",
+    "commits_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1/commits",
+    "comments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/1/comments",
+    "review_comments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1/comments",
+    "review_comment_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/comments{/number}",
+    "author_association": "OWNER",
+    "node_id": "PR_kwDOREslQ87AVYtW",
+    "merge_commit_sha": "da2fe66afe3a68b84db805a0efea13ad06e6c334",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1"
+      },
+      "html": {
+        "href": "https://github.com/asadsubhan0/AuthGHPages/pull/1"
+      },
+      "issue": {
+        "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/1"
+      },
+      "comments": {
+        "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/1/comments"
+      },
+      "review_comments": {
+        "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1/comments"
+      },
+      "review_comment": {
+        "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/comments{/number}"
+      },
+      "commits": {
+        "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1/commits"
+      },
+      "statuses": {
+        "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/statuses/038e0738720161d188cc287831d7f31892840768"
+      }
+    },
+    "head": {
+      "label": "asadsubhan0:feature/1.1.0",
+      "ref": "feature/1.1.0",
+      "sha": "038e0738720161d188cc287831d7f31892840768",
+      "repo": {
+        "id": 1145775427,
+        "node_id": "R_kgDOREslQw",
+        "owner": {
+          "login": "asadsubhan0",
+          "id": 223659256,
+          "node_id": "U_kgDODVTE-A",
+          "avatar_url": "https://avatars.githubusercontent.com/u/223659256?v=4",
+          "html_url": "https://github.com/asadsubhan0",
+          "gravatar_id": "",
+          "type": "User",
+          "site_admin": false,
+          "url": "https://api.github.com/users/asadsubhan0",
+          "events_url": "https://api.github.com/users/asadsubhan0/events{/privacy}",
+          "following_url": "https://api.github.com/users/asadsubhan0/following{/other_user}",
+          "followers_url": "https://api.github.com/users/asadsubhan0/followers",
+          "gists_url": "https://api.github.com/users/asadsubhan0/gists{/gist_id}",
+          "organizations_url": "https://api.github.com/users/asadsubhan0/orgs",
+          "received_events_url": "https://api.github.com/users/asadsubhan0/received_events",
+          "repos_url": "https://api.github.com/users/asadsubhan0/repos",
+          "starred_url": "https://api.github.com/users/asadsubhan0/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/asadsubhan0/subscriptions"
+        },
+        "name": "AuthGHPages",
+        "full_name": "asadsubhan0/AuthGHPages",
+        "default_branch": "master",
+        "created_at": "2026-01-30T07:41:04Z",
+        "pushed_at": "2026-01-30T08:08:24Z",
+        "updated_at": "2026-01-30T08:02:59Z",
+        "html_url": "https://github.com/asadsubhan0/AuthGHPages",
+        "clone_url": "https://github.com/asadsubhan0/AuthGHPages.git",
+        "git_url": "git://github.com/asadsubhan0/AuthGHPages.git",
+        "ssh_url": "git@github.com:asadsubhan0/AuthGHPages.git",
+        "svn_url": "https://github.com/asadsubhan0/AuthGHPages",
+        "language": "JavaScript",
+        "fork": false,
+        "forks_count": 0,
+        "open_issues_count": 1,
+        "open_issues": 1,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "watchers": 0,
+        "size": 69,
+        "allow_forking": true,
+        "web_commit_signoff_required": false,
+        "archived": false,
+        "disabled": false,
+        "private": false,
+        "has_issues": true,
+        "has_wiki": true,
+        "has_pages": false,
+        "has_projects": true,
+        "has_downloads": true,
+        "has_discussions": false,
+        "is_template": false,
+        "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages",
+        "archive_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/{archive_format}{/ref}",
+        "assignees_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/assignees{/user}",
+        "blobs_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs{/sha}",
+        "branches_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/branches{/branch}",
+        "collaborators_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/collaborators{/collaborator}",
+        "comments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/comments{/number}",
+        "commits_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/commits{/sha}",
+        "compare_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/compare/{base}...{head}",
+        "contents_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/{+path}",
+        "contributors_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contributors",
+        "deployments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/deployments",
+        "downloads_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/downloads",
+        "events_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/events",
+        "forks_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/forks",
+        "git_commits_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/commits{/sha}",
+        "git_refs_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/refs{/sha}",
+        "git_tags_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/tags{/sha}",
+        "hooks_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/hooks",
+        "issue_comment_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/comments{/number}",
+        "issue_events_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/events{/number}",
+        "issues_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues{/number}",
+        "keys_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/keys{/key_id}",
+        "labels_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/labels{/name}",
+        "languages_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/languages",
+        "merges_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/merges",
+        "milestones_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/milestones{/number}",
+        "notifications_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/notifications{?since,all,participating}",
+        "pulls_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls{/number}",
+        "releases_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/releases{/id}",
+        "stargazers_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/stargazers",
+        "statuses_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/statuses/{sha}",
+        "subscribers_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/subscribers",
+        "subscription_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/subscription",
+        "tags_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/tags",
+        "trees_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/trees{/sha}",
+        "teams_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/teams",
+        "visibility": "public"
+      },
+      "user": {
+        "login": "asadsubhan0",
+        "id": 223659256,
+        "node_id": "U_kgDODVTE-A",
+        "avatar_url": "https://avatars.githubusercontent.com/u/223659256?v=4",
+        "html_url": "https://github.com/asadsubhan0",
+        "gravatar_id": "",
+        "type": "User",
+        "site_admin": false,
+        "url": "https://api.github.com/users/asadsubhan0",
+        "events_url": "https://api.github.com/users/asadsubhan0/events{/privacy}",
+        "following_url": "https://api.github.com/users/asadsubhan0/following{/other_user}",
+        "followers_url": "https://api.github.com/users/asadsubhan0/followers",
+        "gists_url": "https://api.github.com/users/asadsubhan0/gists{/gist_id}",
+        "organizations_url": "https://api.github.com/users/asadsubhan0/orgs",
+        "received_events_url": "https://api.github.com/users/asadsubhan0/received_events",
+        "repos_url": "https://api.github.com/users/asadsubhan0/repos",
+        "starred_url": "https://api.github.com/users/asadsubhan0/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/asadsubhan0/subscriptions"
+      }
+    },
+    "base": {
+      "label": "asadsubhan0:master",
+      "ref": "master",
+      "sha": "eea99d24886a7ad15afb3b567f7af4d0393aa350",
+      "repo": {
+        "id": 1145775427,
+        "node_id": "R_kgDOREslQw",
+        "owner": {
+          "login": "asadsubhan0",
+          "id": 223659256,
+          "node_id": "U_kgDODVTE-A",
+          "avatar_url": "https://avatars.githubusercontent.com/u/223659256?v=4",
+          "html_url": "https://github.com/asadsubhan0",
+          "gravatar_id": "",
+          "type": "User",
+          "site_admin": false,
+          "url": "https://api.github.com/users/asadsubhan0",
+          "events_url": "https://api.github.com/users/asadsubhan0/events{/privacy}",
+          "following_url": "https://api.github.com/users/asadsubhan0/following{/other_user}",
+          "followers_url": "https://api.github.com/users/asadsubhan0/followers",
+          "gists_url": "https://api.github.com/users/asadsubhan0/gists{/gist_id}",
+          "organizations_url": "https://api.github.com/users/asadsubhan0/orgs",
+          "received_events_url": "https://api.github.com/users/asadsubhan0/received_events",
+          "repos_url": "https://api.github.com/users/asadsubhan0/repos",
+          "starred_url": "https://api.github.com/users/asadsubhan0/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/asadsubhan0/subscriptions"
+        },
+        "name": "AuthGHPages",
+        "full_name": "asadsubhan0/AuthGHPages",
+        "default_branch": "master",
+        "created_at": "2026-01-30T07:41:04Z",
+        "pushed_at": "2026-01-30T08:08:24Z",
+        "updated_at": "2026-01-30T08:02:59Z",
+        "html_url": "https://github.com/asadsubhan0/AuthGHPages",
+        "clone_url": "https://github.com/asadsubhan0/AuthGHPages.git",
+        "git_url": "git://github.com/asadsubhan0/AuthGHPages.git",
+        "ssh_url": "git@github.com:asadsubhan0/AuthGHPages.git",
+        "svn_url": "https://github.com/asadsubhan0/AuthGHPages",
+        "language": "JavaScript",
+        "fork": false,
+        "forks_count": 0,
+        "open_issues_count": 1,
+        "open_issues": 1,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "watchers": 0,
+        "size": 69,
+        "allow_forking": true,
+        "web_commit_signoff_required": false,
+        "archived": false,
+        "disabled": false,
+        "private": false,
+        "has_issues": true,
+        "has_wiki": true,
+        "has_pages": false,
+        "has_projects": true,
+        "has_downloads": true,
+        "has_discussions": false,
+        "is_template": false,
+        "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages",
+        "archive_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/{archive_format}{/ref}",
+        "assignees_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/assignees{/user}",
+        "blobs_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs{/sha}",
+        "branches_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/branches{/branch}",
+        "collaborators_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/collaborators{/collaborator}",
+        "comments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/comments{/number}",
+        "commits_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/commits{/sha}",
+        "compare_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/compare/{base}...{head}",
+        "contents_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/{+path}",
+        "contributors_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contributors",
+        "deployments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/deployments",
+        "downloads_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/downloads",
+        "events_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/events",
+        "forks_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/forks",
+        "git_commits_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/commits{/sha}",
+        "git_refs_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/refs{/sha}",
+        "git_tags_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/tags{/sha}",
+        "hooks_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/hooks",
+        "issue_comment_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/comments{/number}",
+        "issue_events_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/events{/number}",
+        "issues_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues{/number}",
+        "keys_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/keys{/key_id}",
+        "labels_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/labels{/name}",
+        "languages_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/languages",
+        "merges_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/merges",
+        "milestones_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/milestones{/number}",
+        "notifications_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/notifications{?since,all,participating}",
+        "pulls_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls{/number}",
+        "releases_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/releases{/id}",
+        "stargazers_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/stargazers",
+        "statuses_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/statuses/{sha}",
+        "subscribers_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/subscribers",
+        "subscription_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/subscription",
+        "tags_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/tags",
+        "trees_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/trees{/sha}",
+        "teams_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/teams",
+        "visibility": "public"
+      },
+      "user": {
+        "login": "asadsubhan0",
+        "id": 223659256,
+        "node_id": "U_kgDODVTE-A",
+        "avatar_url": "https://avatars.githubusercontent.com/u/223659256?v=4",
+        "html_url": "https://github.com/asadsubhan0",
+        "gravatar_id": "",
+        "type": "User",
+        "site_admin": false,
+        "url": "https://api.github.com/users/asadsubhan0",
+        "events_url": "https://api.github.com/users/asadsubhan0/events{/privacy}",
+        "following_url": "https://api.github.com/users/asadsubhan0/following{/other_user}",
+        "followers_url": "https://api.github.com/users/asadsubhan0/followers",
+        "gists_url": "https://api.github.com/users/asadsubhan0/gists{/gist_id}",
+        "organizations_url": "https://api.github.com/users/asadsubhan0/orgs",
+        "received_events_url": "https://api.github.com/users/asadsubhan0/received_events",
+        "repos_url": "https://api.github.com/users/asadsubhan0/repos",
+        "starred_url": "https://api.github.com/users/asadsubhan0/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/asadsubhan0/subscriptions"
+      }
+    }
+  }
+]
+
+3. pull_request_read - Get details for a single pull request
+==========================================
+Input:
+{
+  "method": "get",
+  "owner": "asadsubhan0",
+  "pullNumber": 1,
+  "repo": "AuthGHPages"
+}
+
+Output: 
+{
+  "id": 3226831702,
+  "number": 1,
+  "state": "open",
+  "locked": false,
+  "title": "get endpoint added",
+  "created_at": "2026-01-30T08:09:05Z",
+  "updated_at": "2026-01-30T08:09:05Z",
+  "user": {
+    "login": "asadsubhan0",
+    "id": 223659256,
+    "node_id": "U_kgDODVTE-A",
+    "avatar_url": "https://avatars.githubusercontent.com/u/223659256?v=4",
+    "html_url": "https://github.com/asadsubhan0",
+    "gravatar_id": "",
+    "type": "User",
+    "site_admin": false,
+    "url": "https://api.github.com/users/asadsubhan0",
+    "events_url": "https://api.github.com/users/asadsubhan0/events{/privacy}",
+    "following_url": "https://api.github.com/users/asadsubhan0/following{/other_user}",
+    "followers_url": "https://api.github.com/users/asadsubhan0/followers",
+    "gists_url": "https://api.github.com/users/asadsubhan0/gists{/gist_id}",
+    "organizations_url": "https://api.github.com/users/asadsubhan0/orgs",
+    "received_events_url": "https://api.github.com/users/asadsubhan0/received_events",
+    "repos_url": "https://api.github.com/users/asadsubhan0/repos",
+    "starred_url": "https://api.github.com/users/asadsubhan0/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/asadsubhan0/subscriptions"
+  },
+  "draft": false,
+  "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1",
+  "html_url": "https://github.com/asadsubhan0/AuthGHPages/pull/1",
+  "issue_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/1",
+  "statuses_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/statuses/038e0738720161d188cc287831d7f31892840768",
+  "diff_url": "https://github.com/asadsubhan0/AuthGHPages/pull/1.diff",
+  "patch_url": "https://github.com/asadsubhan0/AuthGHPages/pull/1.patch",
+  "commits_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1/commits",
+  "comments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/1/comments",
+  "review_comments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1/comments",
+  "review_comment_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/comments{/number}",
+  "author_association": "OWNER",
+  "node_id": "PR_kwDOREslQ87AVYtW",
+  "merged": false,
+  "mergeable": true,
+  "mergeable_state": "clean",
+  "rebaseable": true,
+  "merge_commit_sha": "da2fe66afe3a68b84db805a0efea13ad06e6c334",
+  "comments": 0,
+  "commits": 1,
+  "additions": 45,
+  "deletions": 0,
+  "changed_files": 1,
+  "maintainer_can_modify": false,
+  "review_comments": 0,
+  "_links": {
+    "self": {
+      "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1"
+    },
+    "html": {
+      "href": "https://github.com/asadsubhan0/AuthGHPages/pull/1"
+    },
+    "issue": {
+      "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/1"
+    },
+    "comments": {
+      "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/1/comments"
+    },
+    "review_comments": {
+      "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1/comments"
+    },
+    "review_comment": {
+      "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/comments{/number}"
+    },
+    "commits": {
+      "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls/1/commits"
+    },
+    "statuses": {
+      "href": "https://api.github.com/repos/asadsubhan0/AuthGHPages/statuses/038e0738720161d188cc287831d7f31892840768"
+    }
+  },
+  "head": {
+    "label": "asadsubhan0:feature/1.1.0",
+    "ref": "feature/1.1.0",
+    "sha": "038e0738720161d188cc287831d7f31892840768",
+    "repo": {
+      "id": 1145775427,
+      "node_id": "R_kgDOREslQw",
+      "owner": {
+        "login": "asadsubhan0",
+        "id": 223659256,
+        "node_id": "U_kgDODVTE-A",
+        "avatar_url": "https://avatars.githubusercontent.com/u/223659256?v=4",
+        "html_url": "https://github.com/asadsubhan0",
+        "gravatar_id": "",
+        "type": "User",
+        "site_admin": false,
+        "url": "https://api.github.com/users/asadsubhan0",
+        "events_url": "https://api.github.com/users/asadsubhan0/events{/privacy}",
+        "following_url": "https://api.github.com/users/asadsubhan0/following{/other_user}",
+        "followers_url": "https://api.github.com/users/asadsubhan0/followers",
+        "gists_url": "https://api.github.com/users/asadsubhan0/gists{/gist_id}",
+        "organizations_url": "https://api.github.com/users/asadsubhan0/orgs",
+        "received_events_url": "https://api.github.com/users/asadsubhan0/received_events",
+        "repos_url": "https://api.github.com/users/asadsubhan0/repos",
+        "starred_url": "https://api.github.com/users/asadsubhan0/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/asadsubhan0/subscriptions"
+      },
+      "name": "AuthGHPages",
+      "full_name": "asadsubhan0/AuthGHPages",
+      "default_branch": "master",
+      "created_at": "2026-01-30T07:41:04Z",
+      "pushed_at": "2026-01-30T08:08:24Z",
+      "updated_at": "2026-01-30T08:02:59Z",
+      "html_url": "https://github.com/asadsubhan0/AuthGHPages",
+      "clone_url": "https://github.com/asadsubhan0/AuthGHPages.git",
+      "git_url": "git://github.com/asadsubhan0/AuthGHPages.git",
+      "ssh_url": "git@github.com:asadsubhan0/AuthGHPages.git",
+      "svn_url": "https://github.com/asadsubhan0/AuthGHPages",
+      "language": "JavaScript",
+      "fork": false,
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "open_issues": 1,
+      "stargazers_count": 0,
+      "watchers_count": 0,
+      "watchers": 0,
+      "size": 69,
+      "allow_forking": true,
+      "web_commit_signoff_required": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "has_issues": true,
+      "has_wiki": true,
+      "has_pages": false,
+      "has_projects": true,
+      "has_downloads": true,
+      "has_discussions": false,
+      "is_template": false,
+      "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages",
+      "archive_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/{archive_format}{/ref}",
+      "assignees_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/assignees{/user}",
+      "blobs_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs{/sha}",
+      "branches_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/branches{/branch}",
+      "collaborators_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/collaborators{/collaborator}",
+      "comments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/comments{/number}",
+      "commits_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/commits{/sha}",
+      "compare_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/compare/{base}...{head}",
+      "contents_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/{+path}",
+      "contributors_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contributors",
+      "deployments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/deployments",
+      "downloads_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/downloads",
+      "events_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/events",
+      "forks_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/forks",
+      "git_commits_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/commits{/sha}",
+      "git_refs_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/refs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/tags{/sha}",
+      "hooks_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/hooks",
+      "issue_comment_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/comments{/number}",
+      "issue_events_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/events{/number}",
+      "issues_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues{/number}",
+      "keys_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/keys{/key_id}",
+      "labels_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/labels{/name}",
+      "languages_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/languages",
+      "merges_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/merges",
+      "milestones_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/milestones{/number}",
+      "notifications_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/notifications{?since,all,participating}",
+      "pulls_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls{/number}",
+      "releases_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/releases{/id}",
+      "stargazers_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/stargazers",
+      "statuses_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/statuses/{sha}",
+      "subscribers_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/subscribers",
+      "subscription_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/subscription",
+      "tags_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/tags",
+      "trees_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/trees{/sha}",
+      "teams_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/teams",
+      "visibility": "public"
+    },
+    "user": {
+      "login": "asadsubhan0",
+      "id": 223659256,
+      "node_id": "U_kgDODVTE-A",
+      "avatar_url": "https://avatars.githubusercontent.com/u/223659256?v=4",
+      "html_url": "https://github.com/asadsubhan0",
+      "gravatar_id": "",
+      "type": "User",
+      "site_admin": false,
+      "url": "https://api.github.com/users/asadsubhan0",
+      "events_url": "https://api.github.com/users/asadsubhan0/events{/privacy}",
+      "following_url": "https://api.github.com/users/asadsubhan0/following{/other_user}",
+      "followers_url": "https://api.github.com/users/asadsubhan0/followers",
+      "gists_url": "https://api.github.com/users/asadsubhan0/gists{/gist_id}",
+      "organizations_url": "https://api.github.com/users/asadsubhan0/orgs",
+      "received_events_url": "https://api.github.com/users/asadsubhan0/received_events",
+      "repos_url": "https://api.github.com/users/asadsubhan0/repos",
+      "starred_url": "https://api.github.com/users/asadsubhan0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/asadsubhan0/subscriptions"
+    }
+  },
+  "base": {
+    "label": "asadsubhan0:master",
+    "ref": "master",
+    "sha": "eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "repo": {
+      "id": 1145775427,
+      "node_id": "R_kgDOREslQw",
+      "owner": {
+        "login": "asadsubhan0",
+        "id": 223659256,
+        "node_id": "U_kgDODVTE-A",
+        "avatar_url": "https://avatars.githubusercontent.com/u/223659256?v=4",
+        "html_url": "https://github.com/asadsubhan0",
+        "gravatar_id": "",
+        "type": "User",
+        "site_admin": false,
+        "url": "https://api.github.com/users/asadsubhan0",
+        "events_url": "https://api.github.com/users/asadsubhan0/events{/privacy}",
+        "following_url": "https://api.github.com/users/asadsubhan0/following{/other_user}",
+        "followers_url": "https://api.github.com/users/asadsubhan0/followers",
+        "gists_url": "https://api.github.com/users/asadsubhan0/gists{/gist_id}",
+        "organizations_url": "https://api.github.com/users/asadsubhan0/orgs",
+        "received_events_url": "https://api.github.com/users/asadsubhan0/received_events",
+        "repos_url": "https://api.github.com/users/asadsubhan0/repos",
+        "starred_url": "https://api.github.com/users/asadsubhan0/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/asadsubhan0/subscriptions"
+      },
+      "name": "AuthGHPages",
+      "full_name": "asadsubhan0/AuthGHPages",
+      "default_branch": "master",
+      "created_at": "2026-01-30T07:41:04Z",
+      "pushed_at": "2026-01-30T08:08:24Z",
+      "updated_at": "2026-01-30T08:02:59Z",
+      "html_url": "https://github.com/asadsubhan0/AuthGHPages",
+      "clone_url": "https://github.com/asadsubhan0/AuthGHPages.git",
+      "git_url": "git://github.com/asadsubhan0/AuthGHPages.git",
+      "ssh_url": "git@github.com:asadsubhan0/AuthGHPages.git",
+      "svn_url": "https://github.com/asadsubhan0/AuthGHPages",
+      "language": "JavaScript",
+      "fork": false,
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "open_issues": 1,
+      "stargazers_count": 0,
+      "watchers_count": 0,
+      "watchers": 0,
+      "size": 69,
+      "allow_forking": true,
+      "web_commit_signoff_required": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "has_issues": true,
+      "has_wiki": true,
+      "has_pages": false,
+      "has_projects": true,
+      "has_downloads": true,
+      "has_discussions": false,
+      "is_template": false,
+      "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages",
+      "archive_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/{archive_format}{/ref}",
+      "assignees_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/assignees{/user}",
+      "blobs_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs{/sha}",
+      "branches_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/branches{/branch}",
+      "collaborators_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/collaborators{/collaborator}",
+      "comments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/comments{/number}",
+      "commits_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/commits{/sha}",
+      "compare_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/compare/{base}...{head}",
+      "contents_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/{+path}",
+      "contributors_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contributors",
+      "deployments_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/deployments",
+      "downloads_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/downloads",
+      "events_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/events",
+      "forks_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/forks",
+      "git_commits_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/commits{/sha}",
+      "git_refs_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/refs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/tags{/sha}",
+      "hooks_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/hooks",
+      "issue_comment_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/comments{/number}",
+      "issue_events_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues/events{/number}",
+      "issues_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/issues{/number}",
+      "keys_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/keys{/key_id}",
+      "labels_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/labels{/name}",
+      "languages_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/languages",
+      "merges_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/merges",
+      "milestones_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/milestones{/number}",
+      "notifications_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/notifications{?since,all,participating}",
+      "pulls_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/pulls{/number}",
+      "releases_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/releases{/id}",
+      "stargazers_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/stargazers",
+      "statuses_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/statuses/{sha}",
+      "subscribers_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/subscribers",
+      "subscription_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/subscription",
+      "tags_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/tags",
+      "trees_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/trees{/sha}",
+      "teams_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/teams",
+      "visibility": "public"
+    },
+    "user": {
+      "login": "asadsubhan0",
+      "id": 223659256,
+      "node_id": "U_kgDODVTE-A",
+      "avatar_url": "https://avatars.githubusercontent.com/u/223659256?v=4",
+      "html_url": "https://github.com/asadsubhan0",
+      "gravatar_id": "",
+      "type": "User",
+      "site_admin": false,
+      "url": "https://api.github.com/users/asadsubhan0",
+      "events_url": "https://api.github.com/users/asadsubhan0/events{/privacy}",
+      "following_url": "https://api.github.com/users/asadsubhan0/following{/other_user}",
+      "followers_url": "https://api.github.com/users/asadsubhan0/followers",
+      "gists_url": "https://api.github.com/users/asadsubhan0/gists{/gist_id}",
+      "organizations_url": "https://api.github.com/users/asadsubhan0/orgs",
+      "received_events_url": "https://api.github.com/users/asadsubhan0/received_events",
+      "repos_url": "https://api.github.com/users/asadsubhan0/repos",
+      "starred_url": "https://api.github.com/users/asadsubhan0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/asadsubhan0/subscriptions"
+    }
+  }
+}
+
+
+4. pull_request_read - Get details for a single pull request
+==========================================
+Input:
+{
+  "method": "get_diff",
+  "owner": "asadsubhan0",
+  "pullNumber": 1,
+  "repo": "AuthGHPages"
+}
+
+Output:
+diff --git a/index.js b/index.js
+index 5fa3453..56d12db 100644
+--- a/index.js
++++ b/index.js
+@@ -540,6 +540,51 @@ app.post("/api/sessions/:sessionId/secrets", verifyUserSession, async (req, res)
+   }
+ });
+ 
++/**
++ * GET /api/sessions/:sessionId/remainingsecrets
++ * Frontend polls this to get the count of remaining pending secrets
++ * Supports both user JWT and pipeline Bearer token
++ */
++app.get("/api/sessions/:sessionId/remainingsecrets", (req, res, next) => {
++  // Check if it's a pipeline request (Bearer token)
++  const authHeader = req.headers.authorization;
++  if (authHeader && authHeader.startsWith('Bearer ')) {
++    return verifyPipelineToken(req, res, next);
++  }
++  // Otherwise, verify as user session
++  return verifyUserSession(req, res, next);
++}, async (req, res) => {
++  try {
++    const { sessionId } = req.params;
++    const user = req.user;
++    
++    console.log(`[SESSIONS] Checking remaining secrets for session: ${sessionId}`);
++    if (user) console.log(`[SESSIONS] User: ${user.login}`);
++    
++    const session = getSession(sessionId);
++    
++    if (!session) {
++      console.log(`[SESSIONS] ❌ Session ${sessionId} not found`);
++      return res.status(404).json({ error: 'Session not found' });
++    }
++    
++    const remainingCount = session.secrets.pending.length;
++    
++    console.log(`[SESSIONS] ✅ Session ${sessionId} has ${remainingCount} pending secrets`);
++    
++    res.json({
++      sessionId: session.sessionId,
++      remainingSecrets: remainingCount,
++      totalSecrets: (session.secrets.completed.length + session.secrets.pending.length),
++      completedSecrets: session.secrets.completed.length,
++      pendingSecrets: session.secrets.pending,
++      status: session.metadata.status
++    });
++  } catch (err) {
++    console.error("[SESSIONS] ❌ Failed to get remaining secrets count:", err);
++    res.status(500).json({ error: 'Failed to get remaining secrets', message: err.message });
++  }
++});
+ 
+ // ============================================
+ // ADMIN/DEBUG ENDPOINTS
+
+
+ 5. pull_request_read - Get details for a single pull request
+==========================================
+Input:
+{
+  "method": "get_files",
+  "owner": "asadsubhan0",
+  "pullNumber": 1,
+  "repo": "AuthGHPages"
+}
+
+Output:
+[
+  {
+    "sha": "56d12dbb358bd319ffb2cd4218e5f4e330db2ba0",
+    "filename": "index.js",
+    "additions": 45,
+    "deletions": 0,
+    "changes": 45,
+    "status": "modified",
+    "patch": "@@ -540,6 +540,51 @@ app.post(\"/api/sessions/:sessionId/secrets\", verifyUserSession, async (req, res)\n   }\r\n });\r\n \r\n+/**\r\n+ * GET /api/sessions/:sessionId/remainingsecrets\r\n+ * Frontend polls this to get the count of remaining pending secrets\r\n+ * Supports both user JWT and pipeline Bearer token\r\n+ */\r\n+app.get(\"/api/sessions/:sessionId/remainingsecrets\", (req, res, next) => {\r\n+  // Check if it's a pipeline request (Bearer token)\r\n+  const authHeader = req.headers.authorization;\r\n+  if (authHeader && authHeader.startsWith('Bearer ')) {\r\n+    return verifyPipelineToken(req, res, next);\r\n+  }\r\n+  // Otherwise, verify as user session\r\n+  return verifyUserSession(req, res, next);\r\n+}, async (req, res) => {\r\n+  try {\r\n+    const { sessionId } = req.params;\r\n+    const user = req.user;\r\n+    \r\n+    console.log(`[SESSIONS] Checking remaining secrets for session: ${sessionId}`);\r\n+    if (user) console.log(`[SESSIONS] User: ${user.login}`);\r\n+    \r\n+    const session = getSession(sessionId);\r\n+    \r\n+    if (!session) {\r\n+      console.log(`[SESSIONS] ❌ Session ${sessionId} not found`);\r\n+      return res.status(404).json({ error: 'Session not found' });\r\n+    }\r\n+    \r\n+    const remainingCount = session.secrets.pending.length;\r\n+    \r\n+    console.log(`[SESSIONS] ✅ Session ${sessionId} has ${remainingCount} pending secrets`);\r\n+    \r\n+    res.json({\r\n+      sessionId: session.sessionId,\r\n+      remainingSecrets: remainingCount,\r\n+      totalSecrets: (session.secrets.completed.length + session.secrets.pending.length),\r\n+      completedSecrets: session.secrets.completed.length,\r\n+      pendingSecrets: session.secrets.pending,\r\n+      status: session.metadata.status\r\n+    });\r\n+  } catch (err) {\r\n+    console.error(\"[SESSIONS] ❌ Failed to get remaining secrets count:\", err);\r\n+    res.status(500).json({ error: 'Failed to get remaining secrets', message: err.message });\r\n+  }\r\n+});\r\n \r\n // ============================================\r\n // ADMIN/DEBUG ENDPOINTS\r",
+    "blob_url": "https://github.com/asadsubhan0/AuthGHPages/blob/038e0738720161d188cc287831d7f31892840768/index.js",
+    "raw_url": "https://github.com/asadsubhan0/AuthGHPages/raw/038e0738720161d188cc287831d7f31892840768/index.js",
+    "contents_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/index.js?ref=038e0738720161d188cc287831d7f31892840768"
+  }
+]
+
+6. get_file_contents - Get file or directory contents
+=======================================
+Input: 
+{
+  "owner": "asadsubhan0",
+  "repo": "AuthGHPages",
+  "sha": "eea99d24886a7ad15afb3b567f7af4d0393aa350"
+}
+
+Output:
+[
+  {
+    "type": "file",
+    "size": 14340,
+    "name": ".DS_Store",
+    "path": ".DS_Store",
+    "sha": "1e4fbf8ec670a1948baa97b07a896ee66d359cd3",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/.DS_Store?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/1e4fbf8ec670a1948baa97b07a896ee66d359cd3",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/.DS_Store",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/.DS_Store"
+  },
+  {
+    "type": "file",
+    "size": 74,
+    "name": ".dockerignore",
+    "path": ".dockerignore",
+    "sha": "2af74aa2e320b133cf2e2cd21aa3cc936c282d76",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/.dockerignore?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/2af74aa2e320b133cf2e2cd21aa3cc936c282d76",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/.dockerignore",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/.dockerignore"
+  },
+  {
+    "type": "file",
+    "size": 329,
+    "name": ".env.example",
+    "path": ".env.example",
+    "sha": "c4364d81de54199e990956c066734233c7a2ac1a",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/.env.example?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/c4364d81de54199e990956c066734233c7a2ac1a",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/.env.example",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/.env.example"
+  },
+  {
+    "type": "file",
+    "size": 437,
+    "name": "Dockerfile",
+    "path": "Dockerfile",
+    "sha": "8e60fc0da47954aef78605fbe98b57a532cac39b",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/Dockerfile?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/8e60fc0da47954aef78605fbe98b57a532cac39b",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/Dockerfile",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/Dockerfile"
+  },
+  {
+    "type": "file",
+    "size": 4448,
+    "name": "ENCRYPTION_GUIDE.md",
+    "path": "ENCRYPTION_GUIDE.md",
+    "sha": "3ba9923b16e9c6b8cf5176a987a23067f25eceae",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/ENCRYPTION_GUIDE.md?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/3ba9923b16e9c6b8cf5176a987a23067f25eceae",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/ENCRYPTION_GUIDE.md",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/ENCRYPTION_GUIDE.md"
+  },
+  {
+    "type": "file",
+    "size": 5897,
+    "name": "Readme.md",
+    "path": "Readme.md",
+    "sha": "2c2f1ffedad28c2eb396a59cd01f10f0679e1e49",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/Readme.md?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/2c2f1ffedad28c2eb396a59cd01f10f0679e1e49",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/Readme.md",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/Readme.md"
+  },
+  {
+    "type": "file",
+    "size": 3366,
+    "name": "SECURITY_IMPLEMENTATION.md",
+    "path": "SECURITY_IMPLEMENTATION.md",
+    "sha": "f4137ad152ae681c6e2559cb0a3ecc3fa8a1d8b0",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/SECURITY_IMPLEMENTATION.md?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/f4137ad152ae681c6e2559cb0a3ecc3fa8a1d8b0",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/SECURITY_IMPLEMENTATION.md",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/SECURITY_IMPLEMENTATION.md"
+  },
+  {
+    "type": "dir",
+    "size": 0,
+    "name": "config",
+    "path": "config",
+    "sha": "e851dbe279627da5a4a8437d177b802c58316e78",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/config?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/trees/e851dbe279627da5a4a8437d177b802c58316e78",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/tree/eea99d24886a7ad15afb3b567f7af4d0393aa350/config"
+  },
+  {
+    "type": "dir",
+    "size": 0,
+    "name": "features",
+    "path": "features",
+    "sha": "80b1ced2567a81d08607535f55cd2080616713df",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/features?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/trees/80b1ced2567a81d08607535f55cd2080616713df",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/tree/eea99d24886a7ad15afb3b567f7af4d0393aa350/features"
+  },
+  {
+    "type": "file",
+    "size": 14226,
+    "name": "index-gistless.html",
+    "path": "index-gistless.html",
+    "sha": "b16a48aa39cb341fb64a9a2cac279cdd0a5db587",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/index-gistless.html?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/b16a48aa39cb341fb64a9a2cac279cdd0a5db587",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/index-gistless.html",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/index-gistless.html"
+  },
+  {
+    "type": "file",
+    "size": 21680,
+    "name": "index-working.js",
+    "path": "index-working.js",
+    "sha": "198f47499fd2a01c72b4302388b2849a5778632a",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/index-working.js?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/198f47499fd2a01c72b4302388b2849a5778632a",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/index-working.js",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/index-working.js"
+  },
+  {
+    "type": "file",
+    "size": 11426,
+    "name": "index.html",
+    "path": "index.html",
+    "sha": "19476b021091d17b6ff4aab911ea6f4538e35fc9",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/index.html?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/19476b021091d17b6ff4aab911ea6f4538e35fc9",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/index.html",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/index.html"
+  },
+  {
+    "type": "file",
+    "size": 23129,
+    "name": "index.js",
+    "path": "index.js",
+    "sha": "5fa3453dfad81e5b02920639ba574a87f7e88fe5",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/index.js?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/5fa3453dfad81e5b02920639ba574a87f7e88fe5",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/index.js",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/index.js"
+  },
+  {
+    "type": "dir",
+    "size": 0,
+    "name": "k8s",
+    "path": "k8s",
+    "sha": "855467003dec7517981ab5bc623de4af79683c0a",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/k8s?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/trees/855467003dec7517981ab5bc623de4af79683c0a",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/tree/eea99d24886a7ad15afb3b567f7af4d0393aa350/k8s"
+  },
+  {
+    "type": "file",
+    "size": 364,
+    "name": "package.json",
+    "path": "package.json",
+    "sha": "6ec60d8ba5b35bba7bbfbc3fddbbb5ab7f7f6ce9",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/package.json?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/6ec60d8ba5b35bba7bbfbc3fddbbb5ab7f7f6ce9",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/package.json",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/package.json"
+  },
+  {
+    "type": "dir",
+    "size": 0,
+    "name": "samples",
+    "path": "samples",
+    "sha": "7630e9210f4d2f7e3d0657cd6bf30beb585ba670",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/samples?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/trees/7630e9210f4d2f7e3d0657cd6bf30beb585ba670",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/tree/eea99d24886a7ad15afb3b567f7af4d0393aa350/samples"
+  },
+  {
+    "type": "file",
+    "size": 230,
+    "name": "temp.txt",
+    "path": "temp.txt",
+    "sha": "0b06ca75097e1979145e18f5203d0888d1c456fc",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/temp.txt?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/blobs/0b06ca75097e1979145e18f5203d0888d1c456fc",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/blob/eea99d24886a7ad15afb3b567f7af4d0393aa350/temp.txt",
+    "download_url": "https://raw.githubusercontent.com/asadsubhan0/AuthGHPages/eea99d24886a7ad15afb3b567f7af4d0393aa350/temp.txt"
+  },
+  {
+    "type": "dir",
+    "size": 0,
+    "name": "utils",
+    "path": "utils",
+    "sha": "d4872b3422c8d065d6a07866ae7031afe1bf0ff3",
+    "url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/contents/utils?ref=eea99d24886a7ad15afb3b567f7af4d0393aa350",
+    "git_url": "https://api.github.com/repos/asadsubhan0/AuthGHPages/git/trees/d4872b3422c8d065d6a07866ae7031afe1bf0ff3",
+    "html_url": "https://github.com/asadsubhan0/AuthGHPages/tree/eea99d24886a7ad15afb3b567f7af4d0393aa350/utils"
+  }
+]
+
+7. get_file_contents - Get file or directory contents 
+=============================================
+we can run this again with the target commit sha
+
+8. pull_request_review_write - Write operations (create, submit, delete) on pull request reviews.
+=====================================
+Input:
+{
+  "method": "create",
+  "owner": "asadsubhan0",
+  "pullNumber": 1,
+  "repo": "AuthGHPages"
+}
+
+Output:
+pending pull request created
