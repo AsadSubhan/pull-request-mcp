@@ -5,10 +5,12 @@ import time
 from dotenv import load_dotenv
 from openai import OpenAI
 
-load_dotenv()
+load_dotenv(override=True)
 
 GITHUB_TOKEN=os.environ.get("GITHUB_PERSONAL_ACCESS_TOKEN")
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+GITHUB_OWNER = os.getenv("GITHUB_OWNER")
+GITHUB_REPO = os.getenv("GITHUB_REPO")
 
 # Start a Docker container running the GitHub MCP server
 ### =========================================== 
@@ -22,7 +24,9 @@ proc = subprocess.Popen(
     stdin=subprocess.PIPE,
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE,
-    text=True
+    text=True,
+    encoding="utf-8",
+    errors="replace"
 )
 
 # Initialize connection
@@ -147,8 +151,8 @@ listpr_request = {
     "params": {
         "name": "list_pull_requests",
         "arguments": {
-            "owner": "asadsubhan0",
-            "repo": "AuthGHPages"
+            "owner": GITHUB_OWNER,
+            "repo": GITHUB_REPO
         }
     }
 }
@@ -188,9 +192,9 @@ getpr_request = {
         "name": "pull_request_read",
         "arguments": {
             "method": "get",
-            "owner": "asadsubhan0",
+            "owner": GITHUB_OWNER,
             "pullNumber": pr_number,
-            "repo": "AuthGHPages"
+            "repo": GITHUB_REPO
         }
     }
 }
@@ -229,9 +233,9 @@ getdiff_request = {
         "name": "pull_request_read",
         "arguments": {
             "method": "get_diff",
-            "owner": "asadsubhan0",
+            "owner": GITHUB_OWNER,
             "pullNumber": pr_number,
-            "repo": "AuthGHPages"
+            "repo": GITHUB_REPO
         }
     }
 }
@@ -265,9 +269,9 @@ getfiles_request = {
         "name": "pull_request_read",
         "arguments": {
             "method": "get_files",
-            "owner": "asadsubhan0",
+            "owner": GITHUB_OWNER,
             "pullNumber": pr_number,
-            "repo": "AuthGHPages"
+            "repo": GITHUB_REPO
         }
     }
 }
@@ -290,56 +294,142 @@ getfiles_text = getfiles_response["result"]["content"][0]["text"]
 
 # convert the string into a real Python list
 getfiles_list = json.loads(getfiles_text)
-# print(json.dumps(getfiles_list, indent=2))
 
-filename = getfiles_list[0]["filename"]
-status = getfiles_list[0]["status"]
 
-# Get file content of the changed files in pull request
-### =============================
+llm_payload = {
+    "pull_request_diff": getdiff_text,
+    "files": []
+}
 
-getfilecontent_request = {
+for idx, file_info in enumerate(getfiles_list):
+    filename = file_info["filename"]
+    status = file_info["status"]
+
+    if status == "removed":
+        print(f"Skipping removed file: {filename}")
+        continue
+
+    print(f"\n=== Processing file {idx + 1}: {filename} ({status}) ===")
+
+    request_id = f"getfilecontentRequest_{idx}"
+
+    getfilecontent_request = {
+        "jsonrpc": "2.0",
+        "id": request_id,
+        "method": "tools/call",
+        "params": {
+            "name": "get_file_contents",
+            "arguments": {
+                "owner": GITHUB_OWNER,
+                "repo": GITHUB_REPO,
+                "path": filename,
+                "ref": head_sha
+            }
+        }
+    }
+
+    proc.stdin.write(json.dumps(getfilecontent_request) + "\n")
+    proc.stdin.flush()
+
+    while True:
+        getfilecontent_str = proc.stdout.readline()
+        getfilecontent_response = json.loads(getfilecontent_str)
+
+        if "id" not in getfilecontent_response:
+            continue
+
+        if getfilecontent_response["id"] == request_id:
+            break
+
+    file_content = getfilecontent_response["result"]["content"][1]["resource"]["text"]  
+    llm_payload["files"].append({
+        "filename": filename,
+        "status": status,
+        "content": file_content
+    })
+
+# print("LLM Payload:", json.dumps(llm_payload, indent=2))
+
+
+system_prompt = """You are a senior software engineer performing a pull request review.
+
+You will be given:
+1. The full pull request diff (this is the primary source of truth)
+2. A list of changed files, each with:
+   - filename
+   - change status (added, modified)
+   - full file content (for additional context)
+
+Review the pull request with the following goals:
+- Identify bugs, logical errors, and edge cases
+- Flag security issues, performance concerns, and bad practices
+- Suggest improvements to readability, maintainability, and structure
+- Call out missing validations, error handling, or tests when relevant
+- Avoid commenting on unchanged code unless it directly affects the changes
+
+Rules:
+- Use the diff as the primary signal
+- Use full file content only for understanding context
+- Do NOT repeat the diff or file content in your response
+- Do NOT make speculative comments without evidence from the diff
+- Be concise but specific
+
+Output format:
+
+File: <filename>
+- [Severity: Critical|Major|Minor|Suggestion] <comment>
+
+Overall Review:
+- <comment>
+"""
+
+user_prompt = f"""
+Pull Request Data (JSON):
+{json.dumps(llm_payload, indent=2)}
+"""
+
+response = client.responses.create(
+    model="gpt-5.1",
+    input=[
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_prompt}
+    ],
+    temperature=0.2
+)
+
+# Extract model output safely
+review_text = response.output[0].content[0].text
+# print(review_text)
+
+
+post_review_request = {
     "jsonrpc": "2.0",
-    "id": "getfilecontentRequest",
+    "id": "postReviewRequest",
     "method": "tools/call",
     "params": {
-        "name": "get_file_contents",
+        "name": "pull_request_review_write",
         "arguments": {
-            "owner": "asadsubhan0",
-            "repo": "AuthGHPages",
-            "path": filename,
-            "ref": head_sha
+            "method": "create",
+            "event": "COMMENT",
+            "owner": GITHUB_OWNER,
+            "repo": GITHUB_REPO,
+            "pullNumber": pr_number,
+            "body": review_text
         }
     }
 }
 
-
-proc.stdin.write(json.dumps(getfilecontent_request) + "\n")
+proc.stdin.write(json.dumps(post_review_request) + "\n")
 proc.stdin.flush()
 
 while True:
-    getfilecontent_str = proc.stdout.readline()
-    getfilecontent_response = json.loads(getfilecontent_str)
+    resp_str = proc.stdout.readline()
+    resp = json.loads(resp_str)
 
-    if "id" not in getfilecontent_response:
+    if "id" not in resp:
         continue
 
-    if getfilecontent_response["id"] == "getfilecontentRequest":
+    if resp["id"] == "postReviewRequest":
         break
 
-# extract the text field
-getfilecontent_text = getfilecontent_response["result"]["content"][1]["resource"]["text"]
-
-print(getfilecontent_text)
-
-
-
-
-
-
-
-
-
-
-
-
+print("✅ PR review posted successfully")
