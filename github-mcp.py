@@ -7,10 +7,18 @@ from openai import OpenAI
 
 load_dotenv(override=True)
 
-GITHUB_TOKEN=os.environ.get("GITHUB_PERSONAL_ACCESS_TOKEN")
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+GITHUB_TOKEN=os.getenv("GITHUB_PERSONAL_ACCESS_TOKEN")
+api_key=os.getenv("API_KEY")
+endpoint = os.getenv("FOUNDRY_MODEL_ENDPOINT")
+deployment_name = os.getenv("MODEL_DEPLOYMENT_NAME")
+GITHUB_HOST = os.getenv("GITHUB_HOST")
 GITHUB_OWNER = os.getenv("GITHUB_OWNER")
 GITHUB_REPO = os.getenv("GITHUB_REPO")
+
+client = OpenAI(
+    base_url=f"{endpoint}",
+    api_key=api_key
+)
 
 # Start a Docker container running the GitHub MCP server
 ### =========================================== 
@@ -19,6 +27,7 @@ proc = subprocess.Popen(
     [
         "docker", "run", "-i", "--rm",
         "-e", f"GITHUB_PERSONAL_ACCESS_TOKEN={GITHUB_TOKEN}",
+        "-e", f"GITHUB_HOST={GITHUB_HOST}",
         "ghcr.io/github/github-mcp-server:latest"
     ],
     stdin=subprocess.PIPE,
@@ -389,7 +398,7 @@ Pull Request Data (JSON):
 """
 
 response = client.responses.create(
-    model="gpt-5.1",
+    model=deployment_name,
     input=[
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt}
